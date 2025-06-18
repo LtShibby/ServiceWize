@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import MarketingLayout from '@/components/MarketingLayout';
 import Hero from '@/components/Hero';
 import FeatureCard from '@/components/FeatureCard';
 import TestimonialCard from '@/components/TestimonialCard';
@@ -109,7 +110,8 @@ export default function Home() {
         <link rel="canonical" href={seoData.url} />
       </Head>
 
-      <main className="bg-gray-50">
+      <MarketingLayout>
+        <main className="bg-gray-50">
         {/* Hero Section */}
         <Hero onCTAClick={scrollToWaitlist} />
 
@@ -147,15 +149,8 @@ export default function Home() {
           <EmailForm />
         </div> */}
 
-        {/* Footer */}
-        <footer className="bg-gray-900 text-white py-8">
-          <div className="container-custom text-center">
-            <p className="text-gray-400">
-              © 2025 ServiceWize • Built by WozWize
-            </p>
-          </div>
-        </footer>
-      </main>
+        </main>
+      </MarketingLayout>
     </>
   );
 } 
