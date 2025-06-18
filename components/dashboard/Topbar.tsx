@@ -2,9 +2,10 @@ import { useState } from 'react';
 
 interface TopbarProps {
   title: string;
+  onMenuClick?: () => void;
 }
 
-export default function Topbar({ title }: TopbarProps) {
+export default function Topbar({ title, onMenuClick }: TopbarProps) {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const handleLogout = () => {
@@ -17,9 +18,21 @@ export default function Topbar({ title }: TopbarProps) {
     <div className="bg-white shadow-sm border-b border-gray-200">
       <div className="px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Page Title */}
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900">{title}</h1>
+          {/* Mobile menu button and Page Title */}
+          <div className="flex items-center">
+            {/* Mobile menu button */}
+            <button
+              onClick={onMenuClick}
+              className="lg:hidden mr-4 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+            >
+              <span className="sr-only">Open sidebar</span>
+              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            
+            {/* Page Title */}
+            <h1 className="text-xl lg:text-2xl font-bold text-gray-900">{title}</h1>
           </div>
 
           {/* User Menu */}
@@ -32,7 +45,7 @@ export default function Topbar({ title }: TopbarProps) {
               <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
                 <span className="text-sm font-medium text-gray-700">MR</span>
               </div>
-              <span className="ml-3 text-gray-700 font-medium">Mike Rodriguez</span>
+              <span className="ml-3 text-gray-700 font-medium hidden sm:block">Mike VanBuren</span>
               <svg
                 className="ml-2 h-4 w-4 text-gray-400"
                 fill="none"
@@ -53,7 +66,7 @@ export default function Topbar({ title }: TopbarProps) {
               <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
                 <div className="py-1">
                   <div className="px-4 py-2 text-sm text-gray-700 border-b border-gray-100">
-                    <div className="font-medium">Mike Rodriguez</div>
+                    <div className="font-medium">Mike VanBuren</div>
                     <div className="text-gray-500">Owner</div>
                   </div>
                   

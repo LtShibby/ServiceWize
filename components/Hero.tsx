@@ -31,6 +31,9 @@ export default function Hero({ onCTAClick }: HeroProps) {
             Streamline your service business with intelligent scheduling, customer management, and instant invoicing. Perfect for plumbing, HVAC, electrical, and more.
           </p>
           
+
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
           {/* CTA Button */}
           <button 
             onClick={handleCTAClick}
@@ -38,6 +41,16 @@ export default function Hero({ onCTAClick }: HeroProps) {
           >
             Contact Us to Get Started
           </button>
+                  <a
+                    href="/dashboard"
+                    className="bg-white text-primary border-2 border-primary px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 inline-flex items-center justify-center"
+                  >
+                    Explore Dashboard
+                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                  </a>
+                </div>
           
           {/* Dashboard Preview */}
           <div className="mt-16">

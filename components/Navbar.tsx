@@ -8,10 +8,9 @@ export default function Navbar() {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Features', href: '#features' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Features', href: '/features' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   const isActive = (href: string) => {
@@ -54,21 +53,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Link
-              href="/dashboard"
-              className="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200"
-            >
-              Sign In
-            </Link>
-            <button
-              onClick={() => window.open('https://wozwize.com/contact', '_blank')}
-              className="btn-primary"
-            >
-              Get Started
-            </button>
-          </div>
+          {/* Desktop CTA - Removed for MVP */}
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -108,26 +93,7 @@ export default function Navbar() {
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4 pb-2 border-t border-gray-200">
-                <Link
-                  href="/dashboard"
-                  className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Sign In
-                </Link>
-                <div className="px-3 py-2">
-                  <button
-                    onClick={() => {
-                      window.open('https://wozwize.com/contact', '_blank');
-                      setIsMenuOpen(false);
-                    }}
-                    className="w-full btn-primary"
-                  >
-                    Get Started
-                  </button>
-                </div>
-              </div>
+
             </div>
           </div>
         )}

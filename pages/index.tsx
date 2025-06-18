@@ -39,7 +39,7 @@ const testimonial: Testimonial = {
   id: 'mike-rodriguez',
   quote: 'ServiceWize has completely transformed how we manage our plumbing business. What used to take hours of paperwork now takes minutes. Our customers love the professional invoices and we\'re booking 30% more jobs!',
   author: {
-    name: 'Mike Rodriguez',
+    name: 'Mike VanBuren',
     title: 'Owner',
     company: 'Rodriguez Plumbing Services'
   }
@@ -134,20 +134,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Testimonial Section
-        <section className="section-padding bg-gray-100">
-          <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center">
-              <TestimonialCard testimonial={testimonial} />
-            </div>
-          </div>
-        </section> */}
-
-        {/* Email Capture Form
-        <div id="waitlist">
-          <EmailForm />
-        </div> */}
 
         </main>
       </MarketingLayout>

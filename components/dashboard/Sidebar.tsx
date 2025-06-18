@@ -78,7 +78,11 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Sidebar() {
+interface SidebarProps {
+  onCloseMobile?: () => void;
+}
+
+export default function Sidebar({ onCloseMobile }: SidebarProps) {
   const router = useRouter();
 
   return (
@@ -101,6 +105,7 @@ export default function Sidebar() {
             <Link
               key={item.name}
               href={item.href}
+              onClick={() => onCloseMobile?.()}
               className={classNames(
                 isActive
                   ? 'bg-primary text-white'
