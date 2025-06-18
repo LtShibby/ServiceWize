@@ -142,10 +142,10 @@ export default function Home() {
           </div>
         </section> */}
 
-        {/* Email Capture Form */}
+        {/* Email Capture Form
         <div id="waitlist">
           <EmailForm />
-        </div>
+        </div> */}
 
         {/* Footer */}
         <footer className="bg-gray-900 text-white py-8">

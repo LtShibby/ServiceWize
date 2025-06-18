@@ -8,7 +8,7 @@ interface HeroProps {
 export default function Hero({ onCTAClick }: HeroProps) {
   const handleCTAClick = () => {
     trackButtonClick('join_waitlist', 'hero');
-    if (onCTAClick) onCTAClick();
+    window.open('https://wozwize.com/contact', '_blank');
   };
 
   return (
@@ -36,7 +36,7 @@ export default function Hero({ onCTAClick }: HeroProps) {
             onClick={handleCTAClick}
             className="btn-secondary"
           >
-            Join the Waitlist
+            Contact Us to Get Started
           </button>
           
           {/* Dashboard Preview */}
